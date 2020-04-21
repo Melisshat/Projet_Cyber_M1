@@ -3,7 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/clientui/clientui.iml" filepath="$PROJECT_DIR$/clientui/clientui.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice_video/video/video.iml" filepath="$PROJECT_DIR$/microservice_video/video/video.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice_video/video/microservice_video.iml" filepath="$PROJECT_DIR$/microservice_video/video/microservice_video.iml" />
     </modules>
   </component>
 </project>
