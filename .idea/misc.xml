@@ -5,6 +5,8 @@
       <list>
         <option value="$PROJECT_DIR$/clientui/pom.xml" />
         <option value="$PROJECT_DIR$/microservice_video/video/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/microservice_video/microservice-video/pom.xml" />
       </list>
     </option>
   </component>

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.validation.Valid;
 import java.util.List;
 
-@FeignClient(name = "video", url="localhost:8082")
+@FeignClient(name = "microservice-video", url="localhost:8082")
 public interface VideoProxy {
 
     @GetMapping(value = "/video")
