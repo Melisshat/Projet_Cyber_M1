@@ -2,91 +2,144 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="en">
 
 <head>
-    <title>LIVEFOX</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <!--     Fonts and icons     -->
-    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
-    <link rel="stylesheet" href="main/resources/templates/assets/css/add.css">
-    <!-- Material Kit CSS -->
-    <link href="assets/css/material-kit.css?v=2.0.6" rel="stylesheet" />
-    <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" 			crossorigin="anonymous">
-    <link rel="icon" href="main/resources/templates/assets/favicon.ico" />
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>LIVEFOX</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom fonts for this template -->
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="vendor/simple-line-icons/css/simple-line-icons.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css">
+
+  <!-- Custom styles for this template -->
+  <link href="css/landing-page.min.css" rel="stylesheet">
+  <link rel="icon" href="favicon.ico" />
+
 </head>
 
 <body>
-<nav class="navbar navbar-expand-lg bg-white">
+
+  <!-- Navigation -->
+  <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
-        <a class="navbar-brand" href="Home.html"><img border="0" src="assets/img/logo.png" width="30" height="30"> LIVEFOX</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarText">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="Home.html"><i class="material-icons">home</i>Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#Videos"><i class="material-icons">play_arrow</i>Videos</a>
-                </li>
-            </ul>
-        </div>
+      <a class="navbar-brand" href="#">LIVEFOX PROJECT</a>
+      <a class="btn btn-primary" href="#">Sign In</a>
     </div>
-</nav>
+  </nav>
 
-<header>
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
     <div class="overlay"></div>
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
-        <source src="main/resources/templates/assets/landscape.mp4">
-    </video>
-    <div class="container h-100">
-        <div class="d-flex h-100 text-center align-items-center">
-            <div class="w-100 text-white">
-                <h1 class="display-3"><img border="0" src="main/resources/templates/assets/img/logo2.png" width="40" height="40">LIVEFOX</h1>
-                <p class="lead mb-0">Discover new amazing content!</p>
-            </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Streaming Platform based on kubernetes</h1>
         </div>
-    </div>
-</header>
-
-<div class="main main-raised p-3">
-    <div>
-        <div class="row">
-            <div class="col-sm">
-                <div class="card">
-                    <div class="card-header card-header-primary rounded">
-                        <h4 class="card-title" id="Videos">VIDEOS</h4>
-                        <p class="category">Discover new videos in several categories!</p>
-                        <div class="row">
-                            <div th:each="video : ${videos}" class="col-md4 my-1">
-                                <a th:href="@{|/video/${video.id}|}" class="font-weight-bold">
-                                    <img border="0" src="${video.picturePath}" width="30" height="30">
-                                    <p th:text="${video.name}"></p>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form>
+            <div class="form-row">
+              <div class="col-12 col-md-9 mb-2 mb-md-0">
+                <input type="text" class="form-control form-control-lg" placeholder="Recherche">
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Find</button>
+              </div>
             </div>
+          </form>
         </div>
+      </div>
     </div>
-</div>
+  </header>
 
-<script src="https://cdn.dashjs.org/latest/dash.all.min.js"></script>
-<br>
-<!-- Footer -->
-<footer id="sticky-footer" class="py-4 bg-dark text-white-50">
-    <div class="container text-center">
-        <p>Copyright &copy 2019 LIVEFOX</p>
+  <section class="videos text-center bg-light">
+    <div class="container">
+      <h2 class="mb-5">Videos</h2>
+      <div class="row">
+          <div th:each="video : ${videos}" class="col-md4 my-1">
+            <div class="video-item mx-auto mb-5 mb-lg-0">
+               <a th:href="@{|/video/${video.id}|}" class="font-weight-bold">
+               <p th:text="${video.name}"></p>
+               </a>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-</footer>
-<!-- Footer -->
+  </section>
+
+  <!-- Testimonials -->
+  <section class="testimonials text-center bg-light">
+    <div class="container">
+      <h2 class="mb-5">Teams</h2>
+      <div class="row">
+          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
+            <img class="img-fluid rounded-circle mb-3" src="img/dev-1.jpg" alt="">
+            <h5>E. DE BAILLIENCOURT</h5>
+            <p class="font-weight-light mb-0">"Software developpement!"</p>
+          </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="footer bg-light">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 h-100 text-center text-lg-left my-auto">
+          <ul class="list-inline mb-2">
+            <li class="list-inline-item">
+              <a href="#">About</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Contact</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Terms of Use</a>
+            </li>
+            <li class="list-inline-item">&sdot;</li>
+            <li class="list-inline-item">
+              <a href="#">Privacy Policy</a>
+            </li>
+          </ul>
+          <p class="text-muted small mb-4 mb-lg-0">&copy; Your Website 2020. All Rights Reserved.</p>
+        </div>
+        <div class="col-lg-6 h-100 text-center text-lg-right my-auto">
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-facebook fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item mr-3">
+              <a href="#">
+                <i class="fab fa-twitter-square fa-2x fa-fw"></i>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="#">
+                <i class="fab fa-instagram fa-2x fa-fw"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
 </body>
+
 </html>
