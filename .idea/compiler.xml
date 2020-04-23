@@ -6,17 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="config-server" />
         <module name="eureka-server" />
+        <module name="microservice-video" />
+        <module name="config-server" />
         <module name="zuul-server" />
-        <module name="video" />
         <module name="clientui" />
+        <module name="video" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="clientui" target="1.8" />
       <module name="config-server" target="1.8" />
       <module name="eureka-server" target="1.8" />
+      <module name="microservice-video" target="1.8" />
       <module name="microservice_video" target="1.8" />
       <module name="video" target="1.8" />
       <module name="zuul-server" target="1.8" />
@@ -27,6 +29,7 @@
       <module name="clientui" options="-parameters" />
       <module name="config-server" options="-parameters" />
       <module name="eureka-server" options="-parameters" />
+      <module name="microservice-video" options="-parameters" />
       <module name="microservice_video" options="-parameters" />
       <module name="video" options="-parameters" />
       <module name="zuul-server" options="-parameters" />
