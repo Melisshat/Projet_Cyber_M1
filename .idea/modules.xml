@@ -3,7 +3,10 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/clientui/clientui.iml" filepath="$PROJECT_DIR$/clientui/clientui.iml" />
-      <module fileurl="file://$PROJECT_DIR$/microservice_video/video/video.iml" filepath="$PROJECT_DIR$/microservice_video/video/video.iml" />
+      <module fileurl="file://$PROJECT_DIR$/config-server/config-server.iml" filepath="$PROJECT_DIR$/config-server/config-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eureka-server/eureka-server.iml" filepath="$PROJECT_DIR$/eureka-server/eureka-server.iml" />
+      <module fileurl="file://$PROJECT_DIR$/microservice_video/microservice-video/video.iml" filepath="$PROJECT_DIR$/microservice_video/microservice-video/video.iml" />
+      <module fileurl="file://$PROJECT_DIR$/zuul-server/zuul-server.iml" filepath="$PROJECT_DIR$/zuul-server/zuul-server.iml" />
     </modules>
   </component>
 </project>

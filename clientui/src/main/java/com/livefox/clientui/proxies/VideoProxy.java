@@ -2,13 +2,15 @@ package com.livefox.clientui.proxies;
 
 
 import com.livefox.clientui.bean.VideoBean;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
-@FeignClient(name = "video", url="localhost:8082")
+@FeignClient(name = "microservice-video")
+@RibbonClient(name = "microservice-video")
 public interface VideoProxy {
 
     @GetMapping(value = "/video")
