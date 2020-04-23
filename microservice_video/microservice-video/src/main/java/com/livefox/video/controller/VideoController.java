@@ -7,13 +7,15 @@ import com.livefox.video.repository.VideoRepository;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.actuate.health.Health;
+import org.springframework.boot.actuate.health.HealthIndicator;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.List;
 
 @RestController
-public class VideoController {
+public class VideoController implements HealthIndicator {
 
     @Autowired
     private VideoRepository videoRepository;
@@ -36,11 +38,11 @@ public class VideoController {
 
     @GetMapping(value = "/autofilled")
     public void autofilled(){
-        Video video1 = new Video(1,"Video drole","video drole path","https://i.pinimg.com/originals/cd/cd/df/cdcddfdd339538200ff675e47c62ab4a.jpg");
-        Video video2 = new Video(2,"Video triste","video triste path","https://i.pinimg.com/originals/cd/cd/df/cdcddfdd339538200ff675e47c62ab4a.jpg");
-        Video video3 = new Video(3,"Video romantique","video romantique path","https://i.pinimg.com/originals/cd/cd/df/cdcddfdd339538200ff675e47c62ab4a.jpg");
-        Video video4 = new Video(4,"Video sympa","video sympa path","https://i.pinimg.com/originals/cd/cd/df/cdcddfdd339538200ff675e47c62ab4a.jpg");
-        Video video5 = new Video(5,"Video horreur","video horreur path","https://i.pinimg.com/originals/cd/cd/df/cdcddfdd339538200ff675e47c62ab4a.jpg");
+        Video video1 = new Video(1,"Video drole","video drole path","pictDrole.jpg");
+        Video video2 = new Video(2,"Video triste","video triste path","pictTriste.jpg");
+        Video video3 = new Video(3,"Video romantique","video romantique path","pictRomantique.jpg");
+        Video video4 = new Video(4,"Video sympa","video sympa path","pictSympa.jpg");
+        Video video5 = new Video(5,"Video horreur","video horreur path","pictHorreur.jpg");
         videoRepository.save(video1);
         videoRepository.save(video2);
         videoRepository.save(video3);
@@ -75,5 +77,17 @@ public class VideoController {
     public void updateVideo (@RequestBody Video video){
         log.info("update a video: " + video.toString());
         videoRepository.save(video);
+    }
+
+    @Override
+    public Health getHealth(boolean includeDetails) {
+        return null;
+    }
+
+    @Override
+    public Health health() {
+        List<Video> videos = videoRepository.findAll();
+        if(videos.isEmpty()){return Health.down().build();}
+        return Health.up().build();
     }
 }
