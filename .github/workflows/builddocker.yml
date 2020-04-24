@@ -12,10 +12,50 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
-    - name: Publish ClientuiImages
+    - name: Publish Config-server Images
       uses: elgohr/Publish-Docker-Github-Action@master
       with:
-        name: evanndeb/clientui
+        name: evanndeb/config-server
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: config-server/Dockerfile
+    
+    - name: Publish Eureka-server Images
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: evanndeb/eureka-server
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: eureka-server/Dockerfile
+    
+    - name: Publish Zuul-server Images
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: evanndeb/zuul-server
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: zuul-server/Dockerfile
+    
+    - name: Publish Microservice video
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: evanndeb/mvideo-client
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: microservice-video/microservice-video/Dockerfile
+    
+    - name: Publish Clientui Images
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: evanndeb/clientui-client
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
         dockerfile: clientui/Dockerfile
+    
+    - name: Publish SpringAdmin Images
+      uses: elgohr/Publish-Docker-Github-Action@master
+      with:
+        name: evanndeb/springadmin-server
+        username: ${{ secrets.DOCKER_USERNAME }}
+        password: ${{ secrets.DOCKER_PASSWORD }}
+        dockerfile: springadmin/Dockerfile
