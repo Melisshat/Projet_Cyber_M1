@@ -16,13 +16,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
       
-    - name: Publish Config-server Images
-      uses: elgohr/Publish-Docker-Github-Action@master
-      with:
-        name: evanndeb/config-server
+    - uses: azure/docker-login@v1
+      with: 
+        login-server: contoso.azurecr.io
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
-        dockerfile: config-server/Dockerfile
+
+    - run: |
+        docker build config-server/. -t evanndeb/config-server:${{ github.sha }}
+        docker push evanndeb/config-server:${{ github.sha }}
     
     - name: Publish Eureka-server Images
       uses: elgohr/Publish-Docker-Github-Action@master
