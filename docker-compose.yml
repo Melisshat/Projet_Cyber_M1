@@ -1,0 +1,115 @@
+version: '3.7'
+
+# Define services
+services:
+  # App backend service
+  config-server:
+    build:
+      context: config-server
+      dockerfile: Dockerfile
+    ports:
+      - "9101:9101"
+    restart: always     
+    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+      - backend
+      - frontend
+
+  eureka-server:
+    build:
+      context: eureka-server
+      dockerfile: Dockerfile
+    ports:
+      - "9102:9102"
+    restart: always
+    depends_on:
+     - config-server     
+    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+      - backend
+      - frontend
+
+  zuul-server:
+    build:
+      context: zuul-server
+      dockerfile: Dockerfile
+    ports:
+      - "9004:9004"
+    restart: always
+    depends_on:
+     - config-server
+     - eureka-server     
+    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+      - backend
+      - frontend
+
+  springadmin-server:
+    build:
+      context: springadmin
+      dockerfile: Dockerfile
+    ports:
+      - "9105:9105"
+    restart: always
+    depends_on:
+     - config-server
+     - eureka-server     
+    networks: # Networks to join (Services on the same network can communicate with each other using their name)
+      - backend
+      - frontend
+
+
+  # Frontend Service 
+  mvideo-client:
+    build:
+      context: microservice_video\microservice-video # Use an image built from the specified dockerfile in the `polling-app-client` directory.
+      dockerfile: Dockerfile
+    ports:
+      - "8082:8082" # Map the exposed port 80 on the container to port 9090 on the host machine
+    restart: always
+    depends_on:
+      - config-server
+      - eureka-server
+      - zuul-server
+      - db
+    networks:
+      - frontend
+
+  clientui:
+    build:
+      context: clientui # Use an image built from the specified dockerfile in the `polling-app-client` directory.
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080" # Map the exposed port 80 on the container to port 9090 on the host machine
+    restart: always
+    depends_on:
+      - config-server
+      - eureka-server
+      - zuul-server
+      - mvideo-client
+      - db
+    networks:
+      - frontend  
+
+  # Database Service (Mysql)
+  db:
+    image: mysql
+    command: --default-authentication-plugin=mysql_native_password
+    ports:
+      - "3306:3306"
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_USER: springuser
+      MYSQL_PASSWORD: ThePassword
+      MYSQL_DATABASE: livefoxdb
+    volumes:
+      - db-data:/var/lib/mysql
+    networks:
+      - backend
+
+# Volumes
+volumes:
+  db-data:
+
+# Networks to be created to facilitate communication between containers
+networks:
+  backend:
+  frontend:    
