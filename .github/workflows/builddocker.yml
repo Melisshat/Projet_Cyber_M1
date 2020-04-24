@@ -16,13 +16,14 @@ jobs:
     steps:
     - uses: actions/checkout@v2
     
-    - uses: mr-smithers-excellent/docker-build-push@v3
+    - uses: elgohr/Publish-Docker-Github-Action@master
       name: Build & push Docker config-server image
       with:
-        image: evanndeb/config-server
-        tag: latest
+        name: evanndeb/config-server
         registry: docker.io
-        directory: config-server 
+        directory: config-server
+        workdir: config-server
+        context: config-server
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
     
