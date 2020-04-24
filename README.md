@@ -1,9 +1,11 @@
 # Welcome to Livefox WebApp!
 
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=security_rating)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1) ![Build Docker Images](https://github.com/EvannDev/Projet_Cyber_M1/workflows/Build%20Docker%20Images/badge.svg)
 
 
 ![rasp](https://raw.githubusercontent.com/iiiypuk/rpi-icon/master/256.png) ![enter image description here](https://laurent-dechoux.fr/static/img/kub_256.33b292b.png)
+
+
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=security_rating)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1) ![Build Docker Images](https://github.com/EvannDev/Projet_Cyber_M1/workflows/Build%20Docker%20Images/badge.svg)
 
 
 Please use this instructions as a guide to understand and deploy this webapp based on microservices infrastructure
