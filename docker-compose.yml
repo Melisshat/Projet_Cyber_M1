@@ -70,6 +70,7 @@ services:
       - zuul-server
       - db
     networks:
+      - backend
       - frontend
 
   clientui:
@@ -86,6 +87,7 @@ services:
       - mvideo-client
       - db
     networks:
+      - backend
       - frontend  
 
   # Database Service (Mysql)
@@ -104,6 +106,7 @@ services:
       - db-data:/var/lib/mysql
     networks:
       - backend
+      - frontend
 
 # Volumes
 volumes:
