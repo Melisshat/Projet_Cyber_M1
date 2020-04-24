@@ -1,6 +1,6 @@
 # Welcome to Livefox WebApp!
 
-[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=security_rating)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)
+[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=sqale_rating)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=security_rating)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  [![Vulnerabilities](https://sonarcloud.io/api/project_badges/measure?project=EvannDev_Projet_Cyber_M1&metric=vulnerabilities)](https://sonarcloud.io/dashboard?id=EvannDev_Projet_Cyber_M1)  
 
 Please use this instructions as a guide to understand and deploy this webapp based on microservices infrastructure
 
